@@ -1,0 +1,28 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: shipping-service
+
+order-service:
+  url: ${ORDER_SERVICE_URL:http://localhost:8080}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,prometheus,info,metrics
+  endpoint:
+    health:
+      show-details: always
+  metrics:
+    tags:
+      service: shipping-service
+    export:
+      prometheus:
+        enabled: true
+
+logging:
+  level:
+    com.example.shipping: DEBUG

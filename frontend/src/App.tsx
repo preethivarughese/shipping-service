@@ -56,7 +56,7 @@ function Card({ children, className = '' }: { children: React.ReactNode; classNa
 }
 
 export default function App() {
-  const [form, setForm] = useState<ShipRequest>({ productId: 'PROD-001', quantity: 1, userId: 'user-42' })
+  const [form, setForm] = useState<ShipRequest>({ productId: 'P001', quantity: 1, userId: 'user-42' })
   const [shipments, setShipments] = useState<ShipResponse[]>([])
   const [incidentStatus, setIncidentStatus] = useState<IncidentStatus | null>(null)
   const [loading, setLoading] = useState(false)
@@ -197,7 +197,7 @@ export default function App() {
                   className="w-full bg-slate-700/50 border border-slate-600/50 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/30 transition"
                   value={form.productId}
                   onChange={e => setForm(f => ({ ...f, productId: e.target.value }))}
-                  placeholder="e.g. PROD-001"
+                  placeholder="P001, P002, P004, P005 (in stock)"
                 />
               </div>
               <div>
